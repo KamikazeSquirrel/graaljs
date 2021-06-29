@@ -57,7 +57,7 @@ public class InstallErrorCauseNode extends JavaScriptBaseNode {
         this.getPropertyNode = PropertyGetNode.create(CAUSE, context);
     }
 
-    public void executeVoid(DynamicObject error, DynamicObject options) {
+    public void executeVoid(DynamicObject error, Object options) {
         assert JSObject.isJSObject(error);
         if (hasPropertyNode.hasProperty(options)) {
             Object cause = getPropertyNode.getValue(options);
